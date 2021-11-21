@@ -1,12 +1,11 @@
-import { ListItem } from "@material-ui/core";
 import {
-    ArrowBackIosOutlined,
-    ArrowForwardIosOutlined,
-  } from "@material-ui/icons";
-  import { useRef, useState } from "react";
+  ArrowBackIosOutlined,
+  ArrowForwardIosOutlined,
+} from "@material-ui/icons";
+import { useRef, useState } from "react";
+import ListItem from "../listItem/ListItem";
+import "./list.scss";
 
-import './list.scss'
-  
 export default function List() {
   const [isMoved, setIsMoved] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
