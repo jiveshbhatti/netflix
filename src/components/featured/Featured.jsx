@@ -1,7 +1,31 @@
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
+import { useEffect, useState } from "react";
 import "./featured.scss";
+import axios from 'axios';
 
 export default function Featured({ type }) {
+
+  const [content,setContent] = useState({})
+
+
+  useEffect(()=>{
+    const getRandomContent = async ()=>{
+      try{
+        const res = await axios.get(`/movies/random?type=${type}`,{
+          headers:{
+            token: 'jivesh eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWFlYjI4ZjgwNGUyNzIzZTNmMjlhNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzU0MzIwMCwiZXhwIjoxNjM3OTc1MjAwfQ.F7atb-tXrSd4WZ9LVO-M9pjfH1aCQHiAha6Qwf_OeZk'
+          }
+        })
+        setContent(res.data[0])
+      }catch(err){
+        console.log(err)
+      }
+
+
+    }
+    getRandomContent()
+  }, [type])
+  console.log(content)
   return (
     <div className="featured">
       {type && (
@@ -26,16 +50,16 @@ export default function Featured({ type }) {
         </div>
       )}
       <img
-        src="https://i.imgur.com/uGvESHx.jpg"
+        src={content.img}
         alt=""
       />
       <div className="info">
         <img
-          src="https://i.imgur.com/fm8kB5H.png"
+          src={content.imgTitle}
           alt=""
         />
         <span className="desc">
-        Joker is a 2019 American psychological thriller film directed and produced by Todd Phillips, who co-wrote the screenplay with Scott Silver. The film, based on DC Comics characters, stars Joaquin Phoenix as the Joker and provides a possible origin story for the character.
+        {content.desc}
         </span>
         <div className="buttons">
           <button className="play">
