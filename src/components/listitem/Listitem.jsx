@@ -50,7 +50,7 @@ try{
     >
           {console.log('this is movie image', movie, movie.title)}
       <img
-        src={ null ? 'https://occ-0-1722-1723.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUDz_C7I1E64C9wfcxvePidHXvK7krJSH1dNlvCNxFNswN_klcdbj0AvBdhp4SRIyxo-XLu61vGEgnauQ5OfMhQm3N9MMvrvJEOY.png?r=e3b':movie.img}
+        src={ null ? 'https://occ-0-1722-1723.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUDz_C7I1E64C9wfcxvePidHXvK7krJSH1dNlvCNxFNswN_klcdbj0AvBdhp4SRIyxo-XLu61vGEgnauQ5OfMhQm3N9MMvrvJEOY.png?r=e3b':movie.imgSm}
     
         alt="title pic"
       />
