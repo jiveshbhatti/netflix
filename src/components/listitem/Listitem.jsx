@@ -21,11 +21,12 @@ try{
 
   const res = await axios.get('/movies/find/'+ item, {
     headers:{
-      token: 'jivesh eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWFlYjI4ZjgwNGUyNzIzZTNmMjlhNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzU0MzIwMCwiZXhwIjoxNjM3OTc1MjAwfQ.F7atb-tXrSd4WZ9LVO-M9pjfH1aCQHiAha6Qwf_OeZk'
+      token: 'jivesh eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWFlYjI4ZjgwNGUyNzIzZTNmMjlhNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzgxMjM1MiwiZXhwIjoxNjM4MjQ0MzUyfQ.WnoO_DCBrC1WtEXGtch9j_vsIyUH1wwP9jYz6hZNEAM'
     }
   });
 
   setMovie(res.data)
+  
 }catch(err){
   console.log(err)
 };
@@ -47,10 +48,13 @@ try{
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+          {console.log('this is movie image', movie, movie.title)}
       <img
-        src={movie.img}
+        src={ null ? 'https://occ-0-1722-1723.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUDz_C7I1E64C9wfcxvePidHXvK7krJSH1dNlvCNxFNswN_klcdbj0AvBdhp4SRIyxo-XLu61vGEgnauQ5OfMhQm3N9MMvrvJEOY.png?r=e3b':movie.img}
+    
         alt="title pic"
       />
+     
       {isHovered && (
         <>
           <video src={movie.trailer} autoPlay={true} loop />

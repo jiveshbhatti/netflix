@@ -16,7 +16,7 @@ const Home = ({ type }) => {
         const res = await axios.get(
           `lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`, {
             headers:{
-              token: 'jivesh eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWFlYjI4ZjgwNGUyNzIzZTNmMjlhNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzU0MzIwMCwiZXhwIjoxNjM3OTc1MjAwfQ.F7atb-tXrSd4WZ9LVO-M9pjfH1aCQHiAha6Qwf_OeZk'
+              token: 'jivesh eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWFlYjI4ZjgwNGUyNzIzZTNmMjlhNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzgxMjM1MiwiZXhwIjoxNjM4MjQ0MzUyfQ.WnoO_DCBrC1WtEXGtch9j_vsIyUH1wwP9jYz6hZNEAM'
             }
           }
         );
