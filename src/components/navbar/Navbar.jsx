@@ -3,9 +3,10 @@ import { useContext, useState } from "react";
 import "./navbar.scss";
 import {Link} from 'react-router-dom'
 import { logout } from "../../authContext/AuthActions";
+import { AuthContext } from "../../authContext/AuthContext";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const {dispatch} = useContext
+  const {dispatch} = useContext(AuthContext)
 
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
