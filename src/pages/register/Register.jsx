@@ -1,6 +1,13 @@
 import { useRef } from "react";
 import { useState } from "react";
-import { useHistory } from "react-router";
+import { Redirect, useHistory } from "react-router";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import "./register.scss";
 import axios from "axios";
 
@@ -29,6 +36,9 @@ e.preventDefault()
       console.log(err)
     }
   };
+
+ const signIn = () => (history.push('/login'))
+  
   return (
     <div className="register">
       <div className="top">
@@ -38,9 +48,10 @@ e.preventDefault()
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
             alt=""
           />
-          <button className="loginButton">Sign In</button>
+          <div><button className="loginButton" > Sign In</button></div>
         </div>
       </div>
+      
       <div className="container">
         <h1>Unlimited movies, TV shows, and more.</h1>
         <h2>Watch anywhere. Cancel anytime.</h2>
